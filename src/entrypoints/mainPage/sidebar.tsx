@@ -19,6 +19,7 @@ import {
 import { Outlet } from 'react-router';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ModeToggle } from '@/components/mode-toggle';
+import { Toaster } from '@/components/ui/sonner';
 
 export default function Page() {
     const [activeSection, setActiveSection] = useState<string>('');
@@ -39,9 +40,7 @@ export default function Page() {
                             <Breadcrumb>
                                 <BreadcrumbList>
                                     <BreadcrumbItem className="hidden md:block">
-                                        <BreadcrumbLink>
-                                            App
-                                        </BreadcrumbLink>
+                                        <BreadcrumbLink>App</BreadcrumbLink>
                                     </BreadcrumbItem>
                                     <BreadcrumbSeparator className="hidden md:block" />
                                     <BreadcrumbItem>
@@ -63,6 +62,7 @@ export default function Page() {
                     </div>
                 </SidebarInset>
             </SidebarProvider>
+            <Toaster />
         </ThemeProvider>
     );
 }
